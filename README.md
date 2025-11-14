@@ -43,7 +43,7 @@ A full-stack AI fashion generation platform built with React, TypeScript, Expres
 
 1. Clone the repository
    ```bash
-   git clone <repo-url>
+   git clone 'https://github.com/sanjay18tech-rgb/AI-Image-App.git'
    cd ai-image-app
    ```
 
