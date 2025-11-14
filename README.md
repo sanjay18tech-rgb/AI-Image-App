@@ -55,13 +55,13 @@ A full-stack AI fashion generation platform built with React, TypeScript, Expres
 3. Set up environment variables
 
    Backend (`backend/.env`):
-   ```env
+   env
   DATABASE_URL="postgresql://postgres:postgres@localhost:5432/modelia"
    JWT_SECRET="super-secret-key"
    TOKEN_EXPIRES_IN="1d"
    UPLOAD_DIR="uploads"
    CLIENT_URL="http://127.0.0.1:5173"
-   ```
+   
 
   > Update `DATABASE_URL` with the credentials for your PostgreSQL instance.
 
