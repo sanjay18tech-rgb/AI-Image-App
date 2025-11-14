@@ -44,9 +44,7 @@ const App = () => {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        background: (theme) => theme.palette.mode === 'light'
-          ? 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)'
-          : 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
         backgroundAttachment: 'fixed',
       }}
     >
@@ -54,13 +52,9 @@ const App = () => {
         position="sticky"
         elevation={0}
         sx={{
-          background: (theme) => theme.palette.mode === 'light' 
-            ? 'rgba(255, 255, 255, 0.7)' 
-            : 'rgba(15, 23, 42, 0.7)',
+          background: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(20px) saturate(180%)',
-          borderBottom: (theme) => theme.palette.mode === 'light'
-            ? '1px solid rgba(255, 255, 255, 0.3)'
-            : '1px solid rgba(255, 255, 255, 0.1)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
           boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
         }}
       >
@@ -100,7 +94,6 @@ const App = () => {
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            {/* <ThemeToggle /> */}
             {user ? (
               <>
                 <Paper
@@ -193,13 +186,9 @@ const App = () => {
         sx={{
           mt: 'auto',
           py: 3,
-          background: (theme) => theme.palette.mode === 'light'
-            ? 'rgba(255, 255, 255, 0.7)'
-            : 'rgba(15, 23, 42, 0.7)',
+          background: 'rgba(255, 255, 255, 0.7)',
           backdropFilter: 'blur(20px)',
-          borderTop: (theme) => theme.palette.mode === 'light'
-            ? '1px solid rgba(255, 255, 255, 0.3)'
-            : '1px solid rgba(255, 255, 255, 0.1)',
+          borderTop: '1px solid rgba(255, 255, 255, 0.3)',
         }}
       >
         <Container maxWidth="xl">

@@ -1,7 +1,7 @@
 import { StrictMode, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import { CssBaseline, CircularProgress, Box } from '@mui/material'
-import { ThemeProviderWrapper } from './components/ThemeProviderWrapper'
+import { CssBaseline, CircularProgress, Box, ThemeProvider } from '@mui/material'
+import { theme } from './theme'
 import './index.css'
 
 const App = lazy(() => import('./App.tsx'))
@@ -22,11 +22,11 @@ const LoadingFallback = () => (
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProviderWrapper>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Suspense fallback={<LoadingFallback />}>
         <App />
       </Suspense>
-    </ThemeProviderWrapper>
+    </ThemeProvider>
   </StrictMode>,
 )

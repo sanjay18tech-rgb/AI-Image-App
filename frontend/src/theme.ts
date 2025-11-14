@@ -1,9 +1,9 @@
 import { createTheme } from '@mui/material/styles';
 import type { ThemeOptions } from '@mui/material/styles';
 
-const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
+const themeOptions: ThemeOptions = {
   palette: {
-    mode,
+    mode: 'light',
     primary: {
       main: '#8b5cf6',
       light: '#a78bfa',
@@ -17,12 +17,12 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
       contrastText: '#ffffff',
     },
     background: {
-      default: mode === 'light' ? '#f8fafc' : '#0f172a',
-      paper: mode === 'light' ? 'rgba(255, 255, 255, 0.7)' : 'rgba(15, 23, 42, 0.7)',
+      default: '#f8fafc',
+      paper: 'rgba(255, 255, 255, 0.7)',
     },
     text: {
-      primary: mode === 'light' ? '#1f2937' : '#f1f5f9',
-      secondary: mode === 'light' ? '#6b7280' : '#94a3b8',
+      primary: '#1f2937',
+      secondary: '#6b7280',
     },
   },
   typography: {
@@ -121,17 +121,13 @@ const getThemeOptions = (mode: 'light' | 'dark'): ThemeOptions => ({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: mode === 'light'
-            ? 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)'
-            : 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+          background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
           backgroundAttachment: 'fixed',
         },
       },
     },
   },
-});
-export const createAppTheme = (mode: 'light' | 'dark' = 'light') => createTheme(getThemeOptions(mode));
+};
 
-// Default export for backward compatibility
-export const theme = createAppTheme('light');
+export const theme = createTheme(themeOptions);
 
