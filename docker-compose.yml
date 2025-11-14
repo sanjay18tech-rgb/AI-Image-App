@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: modelia-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: modelia
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - modelia-network
+
+  # Backend API
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: modelia-api
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/modelia
+      JWT_SECRET: ${JWT_SECRET:-super-secret-key-change-in-production}
+      TOKEN_EXPIRES_IN: ${TOKEN_EXPIRES_IN:-1d}
+      UPLOAD_DIR: uploads
+      CLIENT_URL: http://localhost
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - modelia-network
+    command: sh -c "npx prisma migrate deploy && node dist/index.js"
+
+  # Frontend
+  fe:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:4000
+    container_name: modelia-fe
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - modelia-network
+
+volumes:
+  postgres_data:
+
+networks:
+  modelia-network:
+    driver: bridge
+

@@ -1,0 +1,82 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: M
+        - generic [ref=e8]:
+          - heading "Modelia AI Studio" [level=6] [ref=e9]
+          - text: Fashion Design & Generation
+      - generic [ref=e12]: Sign in required
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e19]: Modelia AI Studio
+          - generic [ref=e20]:
+            - heading "Professional fashion generation platform" [level=2] [ref=e21]
+            - paragraph [ref=e22]: Upload reference images, craft detailed prompts, and explore multiple style directions. Built with TypeScript, React, and a production-ready Express API with JWT authentication.
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - img [ref=e26]
+            - paragraph [ref=e28]: JWT-secured authentication with bcrypt hashing
+          - generic [ref=e29]:
+            - img [ref=e31]
+            - paragraph [ref=e33]: Strict validation and predictable 20% overload simulation
+          - generic [ref=e34]:
+            - img [ref=e36]
+            - paragraph [ref=e38]: Retry, abort, and history restore workflows for rapid iteration
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: Processing time
+            - heading "1–2 seconds" [level=3] [ref=e42]
+            - text: Simulated delay for consistent UX testing
+          - generic [ref=e43]:
+            - generic [ref=e44]: History retention
+            - heading "Latest 5" [level=3] [ref=e45]
+            - text: Auto-pruned with instant restore capability
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e50]: Create account
+            - heading "Create your Modelia account" [level=4] [ref=e51]
+          - img [ref=e53]
+        - paragraph [ref=e55]: Secure authentication with JWT tokens and bcrypt password hashing.
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: Email address
+            - generic [ref=e59]:
+              - textbox "Email address" [ref=e60]:
+                - /placeholder: you@example.com
+                - text: playwright+986ef0e4-e87f-4612-9a14-b550a7f54b83@modelia.dev
+              - group:
+                - generic: Email address
+          - generic [ref=e61]:
+            - generic [ref=e62]: Password
+            - generic [ref=e63]:
+              - textbox "Password" [ref=e64]:
+                - /placeholder: ••••••••
+                - text: Playwright!23
+              - group:
+                - generic: Password
+          - button "Sign up" [ref=e65] [cursor=pointer]: Sign up
+        - generic [ref=e66]:
+          - button "Already have an account? Log in" [ref=e67] [cursor=pointer]:
+            - text: Already have an account?
+            - generic [ref=e68]: Log in
+          - alert [ref=e69]:
+            - img [ref=e71]
+            - generic [ref=e73]: Unable to create account. Please try a different email.
+          - generic [ref=e74]: By continuing, you agree to Modelia's terms of service.
+  - contentinfo [ref=e75]:
+    - generic [ref=e77]:
+      - generic [ref=e78]: © 2025 Modelia Labs. Built for the Modelia hiring challenge.
+      - generic [ref=e79]:
+        - generic [ref=e81]: React
+        - generic [ref=e83]: TypeScript
+        - generic [ref=e85]: Tailwind
+        - generic [ref=e87]: Express
+        - generic [ref=e89]: Prisma
+```

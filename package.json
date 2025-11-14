@@ -1,0 +1,35 @@
+{
+  "name": "ai-image-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Modelia AI Studio full-stack application",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "prepare": "npm run prepare --workspace backend",
+    "dev": "npm-run-all --parallel dev:backend dev:frontend",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:frontend:playwright": "npm run dev --workspace frontend -- --host 127.0.0.1 --port 5173",
+    "build": "npm-run-all build:backend build:frontend",
+    "build:backend": "npm run build --workspace backend",
+    "build:frontend": "npm run build --workspace frontend",
+    "lint": "npm-run-all lint:backend lint:frontend",
+    "lint:backend": "npm run lint --workspace backend",
+    "lint:frontend": "npm run lint --workspace frontend",
+    "test": "npm-run-all test:backend test:frontend",
+    "test:backend": "npm run test --workspace backend",
+    "test:frontend": "npm run test --workspace frontend",
+    "test:e2e": "DATABASE_URL=file:./playwright.db npm run prisma:push --workspace backend && npx playwright test",
+    "coverage": "npm-run-all coverage:backend coverage:frontend",
+    "coverage:backend": "npm run test:coverage --workspace backend",
+    "coverage:frontend": "npm run test:coverage --workspace frontend"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5"
+  }
+}
